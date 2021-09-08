@@ -43,8 +43,8 @@ func main() {
 	for _, record := range records {
 		//	Parse
 		zip := record[0]
-		lat := record[1]
-		long := record[2]
+		lat := strings.TrimSpace(record[1])
+		long := strings.TrimSpace(record[2])
 
 		//	Create a new entry in the buntdb
 		err = sysdb.Update(func(tx *buntdb.Tx) error {
